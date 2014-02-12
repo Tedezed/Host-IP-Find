@@ -9,4 +9,11 @@ while num <= 255 :
 	numstr = str(num)
 	comand = "ping -c 1 -t 1 " + net + numstr
 	comand = os.system(comand)
+	if comand == 0:
+		comand = net+numstr
+		listt.append(comand)
 	num = num + 1
+print "List of addresses used in the network: "
+for x in listt:
+	print x
+
