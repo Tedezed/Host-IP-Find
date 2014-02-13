@@ -7,7 +7,7 @@ net = net.split(".")
 net = net[0]+"."+net[1]+"."+net[2]+"."
 while num <= 255 :
 	numstr = str(num)
-	comand = "ping -c 1 -t 1 " + net + numstr
+	comand = "ping -c 1 -n -i 0.2 -W 1 " + net + numstr
 	comand = os.system(comand)
 	if comand == 0:
 		comand = net+numstr
